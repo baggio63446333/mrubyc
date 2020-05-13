@@ -352,11 +352,11 @@ mrbc_value mrbc_send( struct VM *vm, mrbc_value *v, int reg_ofs,
 
   if( m == 0 ) {
     console_printf("No method. vtype=%d method='%s'\n", recv->tt, method );
-    goto ERROR;
+    goto _ERROR;
   }
   if( !m->c_func ) {
     console_printf("Method %s is not C function\n", method );
-    goto ERROR;
+    goto _ERROR;
   }
 
   // create call stack.
@@ -386,7 +386,7 @@ mrbc_value mrbc_send( struct VM *vm, mrbc_value *v, int reg_ofs,
 
   return ret;
 
- ERROR:
+ _ERROR:
   return mrbc_nil_value();
 }
 
