@@ -19,7 +19,7 @@ sample_no_scheduler
 sample_ruby/**/*.txt
 
 # ignore hal
-src/hal
+#src/hal
 
 # Mac
 .DS_Store
